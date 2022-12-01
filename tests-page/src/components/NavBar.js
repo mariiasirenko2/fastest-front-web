@@ -47,7 +47,18 @@ export const NavBar = () => {
                 <button className="vvd"><span>Account</span></button>
               </HashLink>
             </span>
+            <span className="navbar-text">
+              <HashLink to='#connect'>
+                <button className="vvd"><span>Create Test</span></button>
+              </HashLink>
+            </span>
+            <span className="navbar-text">
+              <HashLink to='#connect'>
+                <button className="vvd"><span>Scan Photo</span></button>
+              </HashLink>
+            </span>
           </Navbar.Collapse>
+          
         </Container>
       </Navbar>
     </Router>
