@@ -1,0 +1,48 @@
+.grid1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+.shop .product img {
+    width: 50%;
+    height: 50%;
+
+}
+.background {
+    background: #0390ee;
+    padding: 50px 0;
+}
+
+.container {
+    max-width: 90%;
+    margin: auto;
+}
+
+.c_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product {
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+    margin: 10px;
+
+}
+.product h3 {
+    font-weight: 400;
+    font-size: 17px;
+    color: #000000;
+}
+
+
+.price button:hover {
+    cursor: pointer;
+    background-color: #000000;
+    color: #fff;
+}
+

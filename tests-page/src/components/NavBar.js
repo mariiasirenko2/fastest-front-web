@@ -39,7 +39,7 @@ export const NavBar = () => {
             <img src={logo} alt="Logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"/>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <span className="navbar-text">
