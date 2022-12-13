@@ -5,7 +5,7 @@ import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
 import { HashLink } from 'react-router-hash-link';
 import {
-    BrowserRouter as Router, Route, Routes
+    BrowserRouter as Router, Link, Route, Routes
 } from "react-router-dom";
 import Home from "../pages/Home";
 import TestsPage from "../pages/TestsPage";
@@ -50,9 +50,9 @@ export const TestsBar = () => {
               </HashLink>
             </span>
                         <span className="navbar-text">
-              <HashLink to='#connect'>
+              <Link to='/create'>
                 <button className="vvd"><span>Create Test</span></button>
-              </HashLink>
+              </Link>
             </span>
                         <span className="navbar-text">
               <HashLink to='#connect'>

@@ -51,7 +51,7 @@ span.navbar-text {
 
 .box {
     background-color: var(--box-bg);
-    padding: 30px;
+    padding: 10px;
     border-radius: 20px;
     box-shadow: var(--box-shadow);
 }

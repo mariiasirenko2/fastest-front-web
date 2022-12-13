@@ -4,6 +4,7 @@ import headerImg from "../assets/img/app.png";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import {Link} from "react-router-dom";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -57,8 +58,11 @@ export const Banner = () => {
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Welcome to Fastest</span>
                 <h1>{`Hi! Its Fastest -  `} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>CHange Change Change CHange</p>
-                  <button onClick={() => console.log('connect')}>Sigh Up <ArrowRightCircle size={25} /></button>
+                  <p>This is an app, which will allow you to easily create and check out test by simply using your camera</p>
+                <Link to='/signup'>
+                  <button className="btn btn-outline-secondary" onClick={() => console.log('connect')}>Sign Up <ArrowRightCircle size={25} /></button>
+                </Link>
+
               </div>}
             </TrackVisibility>
           </Col>

@@ -2,9 +2,7 @@ import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {TestsBar} from "../components/TestsBar";
 import {Tests} from "../components/Tests";
-import Sdata from "../components/Sdata"
 import {useEffect, useState} from "react";
-import axios from "nodemailer/lib/mailer";
 
 
 function TestsPage() {
@@ -18,7 +16,7 @@ function TestsPage() {
     }, []);
 
     const getAllNodes = () => {
-        let url = "http://localhost:8080/fastest/profile/5/GetTests";
+        let url = "http://localhost:8080/fastest/profile/" + JSON.parse(localStorage.getItem('user')).id + "/GetTests";
         fetch(url, {
             method: "GET",
         }).then((e) => e.json())
