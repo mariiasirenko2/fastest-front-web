@@ -1,14 +1,10 @@
 import React, { useState } from "react"
 
-export  const ProjectCard = ({ testItems, addToCart }) => {
-    const [count, setCount] = useState(0)
-    const increment = () => {
-        setCount(count + 1)
-    }
+export  const ProjectCard = ({ testItems }) => {
 
     return (
         <>
-            {testItems.map((testItems, index) => {
+            {testItems && testItems.map((testItems) => {
                 return (
                     <div className='box'>
                         <div className='product mtop' >

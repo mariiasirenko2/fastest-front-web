@@ -1,27 +1,49 @@
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { TestsBar } from "../components/TestsBar";
-import { Tests } from "../components/Tests";
-import { Footer } from "../components/Footer";
+import {TestsBar} from "../components/TestsBar";
+import {Tests} from "../components/Tests";
 import Sdata from "../components/Sdata"
-import {authHeader} from "../_helpers/auth-header";
+import {useEffect, useState} from "react";
+import axios from "nodemailer/lib/mailer";
 
 
 function TestsPage() {
-    console.log(authHeader());
-    let { testItems } = Sdata;
-    fetch("http://localhost:8080/fastest/profile/" + JSON.parse(localStorage.getItem('user')).id +"/GetTests", {
-        mode: "no-cors",
-        method: "GET",
-        headers: authHeader(),
-    }).then((e) => testItems = e);
+
+
+    const [tests, setTests] = useState({});
+    const [isLoading, setLoading] = useState(true);
+
+    useEffect(() => {
+        getAllNodes();
+    }, []);
+
+    const getAllNodes = () => {
+        let url = "http://localhost:8080/fastest/profile/5/GetTests";
+        fetch(url, {
+            method: "GET",
+        }).then((e) => e.json())
+            .then((data) =>
+            {
+                setTests(data);
+                setLoading(false);
+            });
+    };
+
+
+    if (isLoading) {
+        return <div className="RandomName">Loading...</div>;
+    }
+
 
     return (
         <div className="TestsPage">
             <TestsBar />
-            <Tests testItems={testItems}/>
+            <Tests testItems={tests}/>
         </div>
     );
+
+    
+
 }
 
 export default TestsPage;

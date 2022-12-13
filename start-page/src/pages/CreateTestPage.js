@@ -30,23 +30,25 @@ function CreateTestPage() {
     }
 
     return (
-        <div className="box">
-            <form className="create-form" onSubmit={handleSubmit}>
-                <div className='test-Name'>
-                    <h2 >Название теста <br/> </h2>
-                    <input  placeholder="Тест 1"   />
-                </div>
-                <h2 className="header">
-                    Files input. Add 2 .docx files <br/>
-                    (tests.docx and students.docx)
-                </h2>
-                <DropFileInput
-                    onFileChange={(files) => onFileChange(files)}
-                />
-                <span className="navbar-text">
-                    <button onClick={()=>handleSubmit()} type = "submit" className="vvd"> Обработать <span/></button>
-                </span>
-            </form>
+        <div className="input">
+            <div className="box">
+                <form className="create-form" onSubmit={handleSubmit}>
+                    <div className='test-Name'>
+                        <h2 >Название теста <br/> </h2>
+                        <input  placeholder="Тест 1"   />
+                    </div>
+                    <h2 className="header">
+                        Files input. Add 2 .docx files <br/>
+                        (tests.docx and students.docx)
+                    </h2>
+                    <DropFileInput
+                        onFileChange={(files) => onFileChange(files)}
+                    />
+                    <span className="navbar-text">
+                        <button onClick={()=>handleSubmit()} type = "submit" className="vvd"> Обработать <span/></button>
+                    </span>
+                </form>
+            </div>
         </div>
 
 
