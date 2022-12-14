@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
 
 :root {
-    --body-bg: #b3e3ff;
-    --box-bg: #fff;
+    --body-bg: #b3e3ff;    --box-bg: #fff;
     --input-bg: #f5f8ff;
     --txt-color: #235da8;
     --txt-second-color: #ccc;

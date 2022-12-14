@@ -9,6 +9,8 @@ import Home from "./pages/Home";
 import Sign from "./auth/Sign";
 import TestsPage from "./pages/TestsPage";
 import CreateTestPage from "./pages/CreateTestPage";
+import ScanPhotoPage from "./pages/ScanPhotoPage";
+import ResultPage from "./pages/ResultPage";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
                 <Route path='/home' element={<TestsPage/>} />
                 <Route path='/signup' element={<Sign/>} />
                 <Route path='/create' element={<CreateTestPage/>} />
+                <Route path='/scan' element={<ScanPhotoPage/>} />
+                <Route path='/result' element={<ResultPage/>}/>
             </Routes>
         </Router>
     </div>

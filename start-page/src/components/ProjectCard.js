@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Container } from "react-bootstrap";
+import {authHeader} from "../_helpers/auth-header";
 export  const ProjectCard = ({ testItems }) => {
 
     const saveAs = (blob, name) => {
@@ -15,6 +16,7 @@ export  const ProjectCard = ({ testItems }) => {
         console.log(url);
         fetch(url, {
             method: "GET",
+            headers: authHeader(),
         }).then((e) => e.blob().then(blob => {
             saveAs(blob, "Variants.docx")
         }));
@@ -25,6 +27,7 @@ export  const ProjectCard = ({ testItems }) => {
         console.log(url);
         fetch(url, {
             method: "GET",
+            headers: authHeader(),
         }).then((e) => e.blob().then(blob => {
             saveAs(blob, "Blanks.docx")
         }));
@@ -35,6 +38,7 @@ export  const ProjectCard = ({ testItems }) => {
         console.log(url);
         fetch(url, {
             method: "GET",
+            headers: authHeader(),
         }).then((e) => e.blob().then(blob => {
             saveAs(blob, "Results.docx")
         }));

@@ -1,8 +1,10 @@
 import './CreateTestPage.css';
 
 import DropFileInput from '../components/drop-file-input/DropFileInput';
+import {authHeader} from "../_helpers/auth-header";
+import ResultPage from "./ResultPage";
 
-function CreateTestPage() {
+function ScanPhotoPage() {
 
     let filesList;
 
@@ -17,27 +19,24 @@ function CreateTestPage() {
 
     const handleSubmit = (e) => {
         let data = new FormData();
-        data.append('testName', 'Hakuna Matata');
         data.append('questionFile', filesList[0]);
-        data.append('studentFile', filesList[1]);
         console.log(user);
         fetch("http://localhost:8080/fastest/profile/" + JSON.parse(localStorage.getItem('user')).id + "/GenerateTest", {
+            headers: authHeader(),
             method: "POST",
             body: data
-        }).then();
+        }).then((e) => e.blob().then(blob => {
+           ResultPage(blob);
+        }));
     }
 
     return (
             <div className="input">
                 <div className="box">
                     <form className="create-form">
-                        <div className='test-Name'>
-                            <h2 >Название теста <br/> </h2>
-                            <input  placeholder="Тест 1"   />
-                        </div>
+
                         <h2 className="header">
-                            Files input. Add 2 .docx files <br/>
-                            (tests.docx and students.docx)
+                            Files input. Add 1 photo <br/>
                         </h2>
                         <DropFileInput
                             onFileChange={(files) => onFileChange(files)}
@@ -48,9 +47,7 @@ function CreateTestPage() {
                     </form>
                 </div>
             </div>
-
-
     );
 }
 
-export default CreateTestPage;
+export default ScanPhotoPage;

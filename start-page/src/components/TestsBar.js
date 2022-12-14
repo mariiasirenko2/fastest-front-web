@@ -45,9 +45,9 @@ export const TestsBar = () => {
                     </Navbar.Toggle>
                     <Navbar.Collapse id="basic-navbar-nav">
             <span className="navbar-text">
-              <HashLink to='#connect'>
-                <button className="vvd"><span>Account</span></button>
-              </HashLink>
+              <Link to='/'>
+                <button className="vvd"><span>Logout</span></button>
+              </Link>
             </span>
                         <span className="navbar-text">
               <Link to='/create'>
@@ -55,9 +55,9 @@ export const TestsBar = () => {
               </Link>
             </span>
                         <span className="navbar-text">
-              <HashLink to='#connect'>
+              <Link to='/scan'>
                 <button className="vvd"><span>Scan Photo</span></button>
-              </HashLink>
+              </Link>
             </span>
                     </Navbar.Collapse>
 

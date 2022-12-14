@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ResultPage from "../pages/ResultPage";
 
 export const Register = (props) => {
     const [email, setEmail] = useState('');
@@ -13,7 +14,7 @@ export const Register = (props) => {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(form)
-        }).then(() => props.onFormSwitch('login'));
+        }).then();
     }
 
     return (

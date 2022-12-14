@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {TestsBar} from "../components/TestsBar";
 import {Tests} from "../components/Tests";
 import {useEffect, useState} from "react";
+import {authHeader} from "../_helpers/auth-header";
 
 
 function TestsPage() {
@@ -19,6 +20,7 @@ function TestsPage() {
         let url = "http://localhost:8080/fastest/profile/" + JSON.parse(localStorage.getItem('user')).id + "/GetTests";
         fetch(url, {
             method: "GET",
+            headers: authHeader(),
         }).then((e) => e.json())
             .then((data) =>
             {
